@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffe5e0, #ffc1b6);
+            color: #333;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #d45d79;
+            padding: 10px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        nav ul li a.active {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #d45d79;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-container {
+            max-width: 800px; /* Largura do carrossel */
+            height: 450px; /* Altura do carrossel */
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden; /* Oculta as imagens fora do container */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel img {
+            width: 100%; /* Cada imagem ocupa 100% do container */
+            height: 100%; /* Preenche a altura do container */
+            object-fit: cover; /* Mantém as proporções da imagem */
+        }
+
+        .carousel-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-navigation button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #d45d79;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .carousel-navigation button:hover {
+            background-color: #a73656;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer a {
+            color: #d45d79;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="duda.html">como tudo começou</a></li>
+            <li><a href="nossa historia.html" class="active">Nossa História</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Todas as nossas memórias juntos 💖</h1>
+        <p>Agora vou mostrar todos os nossos momentos e memórias em fotos e vídeos.</p>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="imagens/d1.jpeg" alt="Primeiro Encontro">
+            <img src="imagens/d2.jpeg" alt="Viagem à Praia">
+            <img src="imagens/d3.jpg" alt="Primeiro Aniversário">
+            <img src="imagens/d4.jpg" alt="Piquenique no Parque">
+            <img src="imagens/d5.jpeg" alt="Show Favorito">
+            <img src="imagens/d6.jpg" alt="Show Favorito">
+            <img src="imagens/d7.jpeg" alt="Show Favorito">
+            <img src="imagens/d8.jpeg" alt="Show Favorito">
+            <img src="imagens/d9.jpeg" alt="Show Favorito">
+            <img src="imagens/d10.jpg" alt="Show Favorito">
+            <img src="imagens/d11.jpg" alt="Show Favorito">
+            <img src="imagens/d12.jpeg" alt="Show Favorito">
+            <img src="imagens/d13.jpeg" alt="Show Favorito">
+            <img src="imagens/d14.jpeg" alt="Show Favorito">
+            <img src="imagens/d15.jpeg" alt="Show Favorito">
+            <img src="imagens/d16.jpeg" alt="Show Favorito">
+            <img src="imagens/d17.jpeg" alt="Show Favorito">
+            <img src="imagens/d18.jpeg" alt="Show Favorito">
+            <img src="imagens/d19.jpeg" alt="Show Favorito">
+            <img src="imagens/d20.jpeg" alt="Show Favorito">
+            <img src="imagens/d21.jpeg" alt="Show Favorito">
+            <img src="imagens/d22.jpeg" alt="Show Favorito">
+            <img src="imagens/d23.jpeg" alt="Show Favorito">
+            <img src="imagens/d24.jpeg" alt="Show Favorito">
+            <img src="imagens/d26.jpeg" alt="Show Favorito">
+            <img src="imagens/d27.jpeg" alt="Show Favorito">
+            <img src="imagens/d30.jpeg" alt="Show Favorito">
+            
+        </div>
+    </div>
+
+    <div class="carousel-navigation">
+        <button onclick="moveCarousel(-1)">⬅️ Anterior</button>
+        <button onclick="moveCarousel(1)">Próximo ➡️</button>
+    </div>
+
+    <footer>
+        <p>Feito com ❤️ por Davi para sua namorada. Sempre juntos!</p>
+        <p><a href="#top">Voltar ao topo</a></p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const totalItems = document.querySelectorAll('.carousel img').length;
+
+            // Atualiza o índice do carrossel
+            currentIndex += direction;
+
+            // Volta ao início/final se ultrapassar os limites
+            if (currentIndex < 0) {
+                currentIndex = totalItems - 1;
+            } else if (currentIndex >= totalItems) {
+                currentIndex = 0;
+            }
+
+            // Move o carrossel para o índice atual
+            const offset = -currentIndex * 100; // Cada imagem ocupa 100% do container
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
